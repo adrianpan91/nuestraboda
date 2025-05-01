@@ -1,0 +1,307 @@
+/* Estilos Generales */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #fdf5e6;
+    color: #333;
+}
+
+/* Header */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    
+
+}
+
+.date {
+    font-size: 1.2rem;
+    color: #666;
+}
+.text-center {
+    
+    text-align: center; /* Centra el texto dentro del div */
+    padding: 20px; /* Agrega algo de espacio alrededor del contenido */
+    border-radius: 10px; /* Bordes redondeados opcionales */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para profundidad */
+    font-family: 'Lora', serif;
+}   
+/* Secciones alternando colores */
+.section-cream {
+    background-color: #fdf5e6; /* Color cremita */
+    padding: 50px 20px;
+}
+
+.section-beige {
+    background-color: #f4e1c1; /* Color beige */
+    padding: 50px 20px;
+}
+
+/* Botones personalizados */
+.btn-custom {
+    background-color: #f4e1c1;
+    color: rgb(66, 57, 57);
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-color: #000000;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom:hover {
+    background-color: #f4e1c1;
+    color: rgb(0, 0, 0);
+}
+
+/* Cartas de eventos */
+.card-custom {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+/* Estilos de la cuenta regresiva */
+.countdowns {
+    font-size: 3rem; /* Tamaño de fuente grande */
+    font-weight: bold;
+    color: #000000; /* Blanco para el texto */
+    background-color: #f4e1c1; /* Beige */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px 40px; /* Espaciado alrededor del texto */
+    display: inline-block; /* Alineación central */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin-top: 20px;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre los bloques */
+    flex-wrap: nowrap; /* Evita que se apilen */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    max-width: 400px; /* Evita que se extienda demasiado en pantallas grandes */
+    margin: auto; /* Centra el contenido */
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 70px; /* Tamaño fijo para cada bloque */
+    min-width: 60px; /* Evita que se achiquen demasiado */
+}
+
+.time-block span {
+    font-size: 2rem; /* Tamaño del número */
+    font-weight: bold;
+}
+
+.time-block p {
+    font-size: 0.9rem; /* Reduce tamaño del texto */
+    margin-top: 5px;
+}
+
+
+/* Estilo del título de la sección */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+
+/* Título de la sección */
+#itinerario .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#itinerario {
+border: 1px solid rgb(255, 157, 46);  /* Borde de 3px en color negro */
+    padding: 30px;  /* Espacio dentro del borde */
+    margin: 10px auto;  /* Margen para separarlo de otros elementos */
+    width: 40%;  /* Ajusta el ancho según necesites */
+    text-align: center;  /* Centrar contenido */
+    border-radius: 10px; /* Esquinas ligeramente redondeadas (opcional) */
+}
+
+/* Contenedor de los eventos */
+.eventos-container {
+    display: flex;
+    justify-content: space-around; /* Para distribuir los eventos horizontalmente */
+    gap: 20px; /* Espacio entre los eventos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para cada evento dentro del itinerario */
+.evento {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+    width: 250px; /* Ancho fijo para cada evento */
+    text-align: center;
+    transition: all 0.3s ease; /* Transición suave para el hover */
+}
+
+/* Estilo cuando el usuario pasa el mouse sobre el evento */
+.evento:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Título y hora del evento */
+.evento h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.evento p {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 15px;
+    
+}
+
+/* Estilo del botón */
+.evento .btn {
+    background-color: #fafafa; 
+    color: rgb(121, 118, 118);
+    border-radius: 15px;
+    border-color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.evento .btn:hover {
+    background-color: #ffab5d; 
+}
+
+
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1; /* Asegura que el modal esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Si el contenido es grande, se agregará scroll */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #f4e1c1;
+    margin: 15% auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 600px;
+}
+
+/* Estilo para el botón de cerrar */
+.close {
+    color: #020000;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 153, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .countdowns .time-block {
+        margin-bottom: 10px;
+    }
+
+    .evento img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 10px;
+    }
+}
+
+/* Asegurando que los bloques se mantengan en una fila y sean legibles en móviles */
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.time-block span {
+    font-size: 3rem; /* Tamaño grande para los números */
+}
+
+@media (max-width: 576px) {
+    .time-block {
+        font-size: 1.5rem; /* Reducir tamaño de la fuente en pantallas pequeñas */
+    }
+
+    .time-block span {
+        font-size: 2.5rem; /* Aumentar tamaño de los números en móviles */
+    }
+
+    .section-title {
+        font-size: 1.75rem; /* Ajustar tamaño del título */
+    }
+}
+
+/* Ajuste en pantallas pequeñas */
+@media (max-width: 576px) {
+    #countdown {
+        max-width: 320px; /* Reduce el ancho en móviles */
+        gap: 5px; /* Menos espacio entre bloques */
+    }
+    
+    .time-block {
+        width: 60px; /* Reduce el tamaño de cada bloque */
+        min-width: 50px;
+    }
+
+    .time-block span {
+        font-size: 1.8rem; /* Reduce el tamaño del número */
+    }
+    
+    .time-block p {
+        font-size: 0.8rem; /* Reduce tamaño del texto */
+    }
+}
