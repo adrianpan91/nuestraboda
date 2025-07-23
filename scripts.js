@@ -1,54 +1,66 @@
+// Fecha de la boda: 20 de noviembre de 2025 a las 19:30
+const fechaBoda = new Date("2025-11-20T19:30:00").getTime();
 
+const temporizador = setInterval(() => {
+  const ahora = new Date().getTime();
+  const distancia = fechaBoda - ahora;
 
-function startCountdown() {
-    var countdownDate = new Date("Nov 20, 2025 19:30:00").getTime();
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countdownDate - now;
+  if (distancia < 0) {
+    clearInterval(temporizador);
+    document.getElementById("dias").textContent = "00";
+    document.getElementById("horas").textContent = "00";
+    document.getElementById("minutos").textContent = "00";
+    document.getElementById("segundos").textContent = "00";
+    return;
+  }
 
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor(
+    (distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerHTML = days;
-        document.getElementById("hours").innerHTML = hours;
-        document.getElementById("minutes").innerHTML = minutes;
-        document.getElementById("seconds").innerHTML = seconds;
+  document.getElementById("dias").textContent = String(dias).padStart(2, "0");
+  document.getElementById("horas").textContent = String(horas).padStart(2, "0");
+  document.getElementById("minutos").textContent = String(minutos).padStart(
+    2,
+    "0"
+  );
+  document.getElementById("segundos").textContent = String(segundos).padStart(
+    2,
+    "0"
+  );
+}, 1000);
 
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("countdown").innerHTML = "¡Tiempo terminado!";
-        }
-    }, 1000);
+// MODAL DE CONTRIBUCIÓN
+const btn = document.getElementById("contribuirButton");
+const modal = document.getElementById("infoModal");
+const close = document.getElementById("closeModal");
+
+if (btn && modal && close) {
+  btn.onclick = () => (modal.style.display = "flex");
+  close.onclick = () => (modal.style.display = "none");
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
 }
 
-startCountdown();
+// BOTON DE PLAY
 
+const musica = document.getElementById("musica");
+const botonMusica = document.getElementById("boton-musica");
+const iconoMusica = document.getElementById("icono-musica");
 
-// Obtener el modal
-const modal = document.getElementById("infoModal");
+let tocando = true;
 
-// Obtener el botón que abre el modal
-const btn = document.getElementById("contribuirButton");
-
-// Obtener el <span> que cierra el modal
-const span = document.getElementById("closeModal");
-
-// Cuando el usuario haga clic en el botón, abrir el modal
-btn.addEventListener("click", function(event) {
-    event.preventDefault(); // Evitar que el enlace se ejecute
-    modal.style.display = "block"; // Mostrar el modal
-});
-
-// Cuando el usuario haga clic en <span> (X), cerrar el modal
-span.addEventListener("click", function() {
-    modal.style.display = "none"; // Ocultar el modal
-});
-
-// Cuando el usuario haga clic fuera del modal, también cerrarlo
-window.addEventListener("click", function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none"; // Ocultar el modal
-    }
+botonMusica.addEventListener("click", () => {
+  if (tocando) {
+    musica.pause();
+    iconoMusica.classList.replace("bi-pause-fill", "bi-play-fill");
+  } else {
+    musica.play();
+    iconoMusica.classList.replace("bi-play-fill", "bi-pause-fill");
+  }
+  tocando = !tocando;
 });

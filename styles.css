@@ -1,307 +1,490 @@
-/* Estilos Generales */
+/* --- ESTILO GENERAL --- */
+html,
 body {
-    font-family: 'Playfair Display', serif;
-    background-color: #fdf5e6;
-    color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f3d8ff;
+  width: 100%;
 }
 
-/* Header */
-.title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    
-
+#cuerpo {
+  display: block;
 }
 
-.date {
-    font-size: 1.2rem;
-    color: #666;
-}
-.text-center {
-    
-    text-align: center; /* Centra el texto dentro del div */
-    padding: 20px; /* Agrega algo de espacio alrededor del contenido */
-    border-radius: 10px; /* Bordes redondeados opcionales */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para profundidad */
-    font-family: 'Lora', serif;
-}   
-/* Secciones alternando colores */
-.section-cream {
-    background-color: #fdf5e6; /* Color cremita */
-    padding: 50px 20px;
+/* COLORES DE LOS TITULOS */
+
+.titulo1 {
+  color: #ffffff;
 }
 
-.section-beige {
-    background-color: #f4e1c1; /* Color beige */
-    padding: 50px 20px;
+.titulo2 {
+  color: #580081;
 }
 
-/* Botones personalizados */
-.btn-custom {
-    background-color: #f4e1c1;
-    color: rgb(66, 57, 57);
-    border-radius: 5px;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-color: #000000;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+/* CENTRA TODOS LOS ICONOS */
+.img-centrada {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.btn-custom:hover {
-    background-color: #f4e1c1;
-    color: rgb(0, 0, 0);
+/* --- COLORES PERSONALIZADOS --- */
+.bg-violeta-claro {
+  background-color: #f3d8ff;
+}
+.bg-violeta-oscuro {
+  background-color: #c372f5;
 }
 
-/* Cartas de eventos */
-.card-custom {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    margin: 10px auto;
+/* --- CUENTA REGRESIVA --- */
+#cuenta-boda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: transparent;
 }
 
-/* Estilos de la cuenta regresiva */
-.countdowns {
-    font-size: 3rem; /* Tamaño de fuente grande */
-    font-weight: bold;
-    color: #000000; /* Blanco para el texto */
-    background-color: #f4e1c1; /* Beige */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px 40px; /* Espaciado alrededor del texto */
-    display: inline-block; /* Alineación central */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    margin-top: 20px;
+.contador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-#countdown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* Espacio entre los bloques */
-    flex-wrap: nowrap; /* Evita que se apilen */
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    max-width: 400px; /* Evita que se extienda demasiado en pantallas grandes */
-    margin: auto; /* Centra el contenido */
+.unidad-contenedor {
+  background-color: #c372f5;
+  color: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  min-width: 70px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.time-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 70px; /* Tamaño fijo para cada bloque */
-    min-width: 60px; /* Evita que se achiquen demasiado */
+.valor {
+  font-size: 48px;
+  font-weight: bold;
 }
 
-.time-block span {
-    font-size: 2rem; /* Tamaño del número */
-    font-weight: bold;
+.etiqueta {
+  font-size: 14px;
+  margin-top: 4px;
 }
 
-.time-block p {
-    font-size: 0.9rem; /* Reduce tamaño del texto */
-    margin-top: 5px;
+.separador {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 0 5px;
 }
 
+/* TIPOGRAFIAS */
 
-/* Estilo del título de la sección */
-.section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
+h1 {
+  font-weight: bold;
 }
 
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+/* AZUL */
+.gloock-regular {
+  font-family: "Gloock", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-
-/* Título de la sección */
-#itinerario .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* ROJOS */
+.fuente-ebgaramond {
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
 }
 
-#itinerario {
-border: 1px solid rgb(255, 157, 46);  /* Borde de 3px en color negro */
-    padding: 30px;  /* Espacio dentro del borde */
-    margin: 10px auto;  /* Margen para separarlo de otros elementos */
-    width: 40%;  /* Ajusta el ancho según necesites */
-    text-align: center;  /* Centrar contenido */
-    border-radius: 10px; /* Esquinas ligeramente redondeadas (opcional) */
+/* VIOLETAS */
+.fuente-greatvibes {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px; /* Ajusta el tamaño como lo necesites */
 }
 
-/* Contenedor de los eventos */
-.eventos-container {
-    display: flex;
-    justify-content: space-around; /* Para distribuir los eventos horizontalmente */
-    gap: 20px; /* Espacio entre los eventos */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* VERDES */
+.fuente-azeret {
+  font-family: "Azeret Mono", monospace;
+  font-weight: 100;
 }
 
-/* Estilo para cada evento dentro del itinerario */
-.evento {
-    background-color: #fff; /* Fondo blanco */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    padding: 20px;
-    width: 250px; /* Ancho fijo para cada evento */
-    text-align: center;
-    transition: all 0.3s ease; /* Transición suave para el hover */
-}
-
-/* Estilo cuando el usuario pasa el mouse sobre el evento */
-.evento:hover {
-    transform: translateY(-10px); /* Efecto de elevación */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
-}
-
-/* Título y hora del evento */
-.evento h3 {
-    font-size: 1.5rem;
-    color: #000000;
-    margin-bottom: 10px;
-}
-
-.evento p {
-    font-size: 1.3rem;
-    color: #000000;
-    margin-bottom: 15px;
-    
-}
-
-/* Estilo del botón */
-.evento .btn {
-    background-color: #fafafa; 
-    color: rgb(121, 118, 118);
-    border-radius: 15px;
-    border-color: #333;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.evento .btn:hover {
-    background-color: #ffab5d; 
-}
-
-
+/* --- MODAL --- */
 .modal {
-    display: none; /* Ocultar el modal por defecto */
-    position: fixed; /* Fijo en la pantalla */
-    z-index: 1; /* Asegura que el modal esté sobre otros elementos */
-    left: 0;
-    top: 0;
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Alto completo */
-    overflow: auto; /* Si el contenido es grande, se agregará scroll */
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Contenido del modal */
 .modal-content {
-    background-color: #f4e1c1;
-    margin: 15% auto; /* Centrado vertical y horizontal */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Ancho del modal */
-    max-width: 600px;
+  background-color: #c372f5;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  padding: 20px;
+  text-align: center;
+  color: white;
 }
 
-/* Estilo para el botón de cerrar */
 .close {
-    color: #020000;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ITINERARIO */
+
+/* Cuadro decorativo simple para itinerario */
+.cuadro-itinerario {
+  border: 2px solid #580081; /* Línea fina blanca */
+  border-radius: 15px; /* Bordes suavemente redondeados */
+  padding: 2rem 1rem; /* Espaciado interior */
+  background-color: transparent; /* Fondo sin color */
+}
+
+/* --- TARJETAS --- */
+section.bg-violeta-claro .card {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Espacio interno entre el borde de la tarjeta y su contenido.*/
+  transition: transform 0.3s ease;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+/* EFECTO HOVER (cuando pasás el mouse) */
+
+section.bg-violeta-claro .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* DETALLES DE TEXTO Y CONTENIDO */
+
+section.bg-violeta-claro .card-body {
+  padding-top: 5px;
+}
+section.bg-violeta-claro .card-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+section.bg-violeta-claro .card p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* BOTÓN DENTRO DE LA CARD */
+section.bg-violeta-claro .btn-outline-light {
+  border-width: 2px;
+  font-weight: 600;
+  align-self: center;
+  width: 90%;
+  max-width: 200px;
+}
+
+/* BOTÓN DE CONFIRMACIÓN DE ASISTENCIA */
+.btn-confirmacion {
+  color: #580081;
+  border: 2px solid #580081;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-confirmacion:hover {
+  background-color: #580081;
+  color: white;
+}
+
+/* BOTON DE PLAY */
+
+#boton-musica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #580081;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: flotar 2s ease-in-out infinite;
+  transition: background-color 0.3s ease;
+}
+#boton-musica:hover {
+  background-color: #c372f5;
+}
+#icono-musica {
+  font-size: 1.5rem;
+}
+@keyframes flotar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* IMAGEN REDONDA DE LA CARD */
+
+section.bg-violeta-claro .card img.rounded-circle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+  background-color: rgb(255, 255, 255);
+}
+
+/* DETALLES DE BODA */
+.detalles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Íconos en sección detalles */
+.icono-detalle {
+  font-size: 2.5rem; /* Tamaño grande del ícono */
+  display: block; /* Que ocupe toda la línea */
+  margin-bottom: 0.5rem; /* Espacio debajo del ícono */
+  color: #580081;
+}
+
+/* ICONOS REDONDOS */
+.icon-container {
+  display: inline-block;
+  background-color: #c372f5; /* Color blanco */
+  padding: 10px; /* Espacio alrededor de la imagen */
+  border-radius: 50%; /* Hacer que el contenedor sea redondo */
+  width: 80px; /* El tamaño del círculo, ajusta según sea necesario */
+  height: 80px; /* El mismo tamaño que el ancho */
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
+}
+
+.icon-container img {
+  border-radius: 50%; /* Asegura que la imagen sea redonda */
+}
+
+/* LINEAS DE LAS FRASES */
+.linea-blanca {
+  border: 0;
+  height: 4px; /* Ajusta el grosor de la línea */
+  background-color: white; /* Asegúrate de que sea blanca */
+}
+
+/* ALIMENTACION CENTRADO */
+
+.icono-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin-bottom: 10px; /* Espacio entre la imagen y el título */
+}
+
+.icono-detalle {
+  display: block; /* Eliminar posibles espacios debajo de la imagen */
+}
+
+/* Asegúrate de que los iconos */
+.icono-responsive {
+  width: 60px; /* Tamaño base */
+  height: 60px;
+  max-width: 100%; /* Asegura que el icono no se estire más allá de su contenedor */
+  margin-bottom: 15px; /* Espaciado debajo del icono */
+}
+
+/* Asegurar que los títulos y textos sean también responsivos */
+.gloock-regular {
+  font-size: 1.25rem; /* Tamaño del texto */
+}
+
+.fuente-ebgaramond {
+  font-size: 1rem; /* Tamaño de texto más pequeño */
+}
+
+/* Asegúrate de que la imagen ocupe todo el ancho disponible */
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+/* Capa oscura encima de la imagen */
+.overlay {
+  position: absolute;
+  top: 0; /* Cubre desde el principio de la imagen */
+  left: 0;
+  right: 0;
+  height: 100%; /* La capa cubre la mitad superior */
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilo del texto dentro de la capa oscura */
+.overlay h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Establece el contenedor como relativo para el posicionamiento absoluto */
+.container {
+  position: relative;
+}
+
+/* --- FUENTES PERSONALIZADAS --- */
+.titulo-great {
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  color: #580081;
+  margin-bottom: 1rem;
+}
+
+.texto-ingreso {
+  font-size: 3rem;
+  color: #580081;
+  margin-bottom: 2rem;
+}
+
+/* --- FONDO GENERAL DE INGRESO --- */
+.fondo-ingreso {
+  margin: 0;
+  padding: 0;
+  background-color: #f3d8ff;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* --- TEXTO CENTRADO SOBRE FONDO --- */
+.texto-centrado {
+  padding: 2rem;
+}
+
+/* --- BOTÓN DE INGRESO --- */
+.btn-ingresar {
+  border: 2px solid #580081;
+  color: #580081;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+}
+
+.btn-ingresar:hover {
+  background-color: #ffffff;
+  color: #580081;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  #cuenta-boda {
+    padding: 0.5rem;
+    height: auto;
+  }
+
+  .unidad-contenedor {
+    min-width: 50px;
+    padding: 6px;
+  }
+
+  .valor {
     font-size: 28px;
-    font-weight: bold;
-    float: right;
-    cursor: pointer;
+  }
+  .etiqueta {
+    font-size: 12px;
+  }
+  .separador {
+    font-size: 28px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  section.bg-violeta-claro .card-title {
+    font-size: 1.3rem;
+  }
+
+  section.bg-violeta-claro .card p {
+    font-size: 1rem;
+  }
+
+  section.bg-violeta-claro .btn-outline-light {
+    max-width: 100%;
+  }
+
+  .fuente-greatvibes {
+    font-size: 20px;
+  }
 }
 
-.close:hover,
-.close:focus {
-    color: rgb(255, 153, 0);
-    text-decoration: none;
-    cursor: pointer;
-}
-
+/* Para pantallas pequeñas */
 @media (max-width: 576px) {
-    .countdowns .time-block {
-        margin-bottom: 10px;
-    }
+  .gloock-regular {
+    font-size: 1rem; /* Reducir el tamaño del título */
+  }
 
-    .evento img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .btn {
-        padding: 10px;
-    }
+  .fuente-ebgaramond {
+    font-size: 0.875rem; /* Reducir el tamaño del texto */
+  }
 }
 
-/* Asegurando que los bloques se mantengan en una fila y sean legibles en móviles */
-.time-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.time-block span {
-    font-size: 3rem; /* Tamaño grande para los números */
-}
-
+/* Para pantallas pequeñas (móviles) */
 @media (max-width: 576px) {
-    .time-block {
-        font-size: 1.5rem; /* Reducir tamaño de la fuente en pantallas pequeñas */
-    }
-
-    .time-block span {
-        font-size: 2.5rem; /* Aumentar tamaño de los números en móviles */
-    }
-
-    .section-title {
-        font-size: 1.75rem; /* Ajustar tamaño del título */
-    }
+  .icono-responsive {
+    width: 40px; /* Reducir el tamaño en pantallas más pequeñas */
+    height: 40px;
+  }
 }
 
-/* Ajuste en pantallas pequeñas */
-@media (max-width: 576px) {
-    #countdown {
-        max-width: 320px; /* Reduce el ancho en móviles */
-        gap: 5px; /* Menos espacio entre bloques */
-    }
-    
-    .time-block {
-        width: 60px; /* Reduce el tamaño de cada bloque */
-        min-width: 50px;
-    }
-
-    .time-block span {
-        font-size: 1.8rem; /* Reduce el tamaño del número */
-    }
-    
-    .time-block p {
-        font-size: 0.8rem; /* Reduce tamaño del texto */
-    }
+/* Para pantallas medianas (tabletas) y más grandes */
+@media (min-width: 576px) {
+  .icono-responsive {
+    width: 60px; /* Tamaño estándar para pantallas medianas y grandes */
+    height: 60px;
+  }
 }
