@@ -67,41 +67,52 @@ if (btn && modal && close) {
 
 // BOTÓN DE PLAY / PAUSA
 
-const musica = document.getElementById("musica");
-const botonMusica = document.getElementById("boton-musica");
-const iconoMusica = document.getElementById("icono-musica");
+document.addEventListener("DOMContentLoaded", () => {
+  const musica = document.getElementById("musica");
+  const botonMusica = document.getElementById("boton-musica");
+  const iconoMusica = document.getElementById("icono-musica");
 
-let tocando = true;
+  let tocando = true;
 
-// Aquí agregamos la solución para autoplay bloqueado:
-// Arrancamos muteado para que el navegador deje reproducir sin interacción
-musica.muted = true;
-musica.play().catch(() => {
-  // Si da error por bloqueo, no hacemos nada, queda muteado
-});
+  // Arrancamos muteado para evitar bloqueo autoplay
+  musica.muted = true;
+  musica.play().catch(() => {});
 
-// Al primer click en la página, quitamos el mute y reproducimos con sonido
-document.addEventListener(
-  "click",
-  () => {
-    if (musica.muted) {
-      musica.muted = false;
-      musica.play().catch(() => {});
-      tocando = true;
+  // Al primer click quitamos mute y ponemos sonido
+  document.addEventListener(
+    "click",
+    () => {
+      if (musica.muted) {
+        musica.muted = false;
+        musica.play().catch(() => {});
+        tocando = true;
+        iconoMusica.classList.replace("bi-play-fill", "bi-pause-fill");
+      }
+    },
+    { once: true }
+  );
+
+  // Botón play/pause música
+  botonMusica.addEventListener("click", () => {
+    if (tocando) {
+      musica.pause();
+      iconoMusica.classList.replace("bi-pause-fill", "bi-play-fill");
+    } else {
+      musica.play();
       iconoMusica.classList.replace("bi-play-fill", "bi-pause-fill");
     }
-  },
-  { once: true }
-);
+    tocando = !tocando;
+  });
 
-// Listener para el botón de música (play/pause)
-botonMusica.addEventListener("click", () => {
-  if (tocando) {
-    musica.pause();
-    iconoMusica.classList.replace("bi-pause-fill", "bi-play-fill");
-  } else {
-    musica.play();
-    iconoMusica.classList.replace("bi-play-fill", "bi-pause-fill");
-  }
-  tocando = !tocando;
+  // Cerrar modal al click en "INGRESAR"
+
+  const bienvenidaModal = document.getElementById("modalBienvenida");
+  const btnIngresar = document.getElementById("btnIngresar");
+
+  btnIngresar.addEventListener("click", () => {
+    if (bienvenidaModal) {
+      bienvenidaModal.style.display = "none";
+    }
+    musica.play().catch(() => {});
+  });
 });

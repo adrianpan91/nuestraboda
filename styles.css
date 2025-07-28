@@ -114,6 +114,15 @@ h1 {
   font-weight: 100;
 }
 
+.parisienne-regular {
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  color: #580081;
+  margin-bottom: 1rem;
+}
+
 /* --- MODAL --- */
 .modal {
   position: fixed;
@@ -144,6 +153,31 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.modal-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1050; /* encima de todo */
+  background-color: #680865; /* mismo color violeta oscuro */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.9);
+  z-index: 1050;
+}
+
+.modal-fullscreen[style*="display: none"] {
+  display: none !important;
 }
 
 /* ITINERARIO */
@@ -487,4 +521,126 @@ section.bg-violeta-claro .card img.rounded-circle {
     width: 60px; /* Tamaño estándar para pantallas medianas y grandes */
     height: 60px;
   }
+}
+
+/* MODAL BIENVENIDA */
+
+#bienvenidaModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bienvenidaModal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(88, 0, 129, 0.5); /* Overlay violeta oscuro */
+  z-index: 1;
+}
+
+#bienvenidaModal .contenido-bienvenida {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+#bienvenidaModal h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#bienvenidaModal p {
+  font-family: "EB Garamond", serif;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+#btnIngresar {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#btnIngresar:hover {
+  background-color: white;
+  color: #580081;
+  cursor: pointer;
+}
+
+.unidad-contenedor {
+  word-break: break-word;
+}
+
+/* Footer: que ocupe todo el ancho */
+section.py-4.bg-violeta-oscuro.text-center.position-relative {
+  padding: 0; /* sacamos padding para que imagen ocupe todo el ancho */
+  width: 100vw;
+  overflow-x: hidden; /* evita scroll horizontal */
+}
+
+/* Container sin padding ni margen para imagen full width */
+section.py-4.bg-violeta-oscuro.text-center.position-relative > .container {
+  padding: 0;
+  margin: 0;
+  position: relative; /* para overlay */
+  max-width: 100% !important; /* quita limitación de bootstrap */
+}
+
+/* Imagen ocupa todo el ancho */
+section.py-4.bg-violeta-oscuro.text-center.position-relative img.img-fluid {
+  width: 100vw;
+  height: auto;
+  display: block;
+  border-radius: 0; /* elimina borde redondeado si querés */
+}
+
+/* Overlay texto más abajo, centrado, fondo semitransparente */
+section.py-4.bg-violeta-oscuro.text-center.position-relative .overlay {
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Great Vibes", cursive;
+  text-align: end;
+  user-select: none;
+}
+
+/* Ajuste responsive: texto un poco más pequeño en móviles */
+@media (max-width: 576px) {
+  section.py-4.bg-violeta-oscuro.text-center.position-relative .overlay {
+    font-size: 1.5rem;
+    padding: 8px 0;
+    bottom: 5px;
+  }
+}
+
+.separacion {
+  margin-bottom: 20px; /* podés ajustar este valor */
+}
+
+.overlay {
+  justify-content: center;
+  align-items: end;
 }
