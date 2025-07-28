@@ -46,27 +46,7 @@ if (btn && modal && close) {
   };
 }
 
-// BOTON DE PLAY
-
-// const musica = document.getElementById("musica");
-// const botonMusica = document.getElementById("boton-musica");
-// const iconoMusica = document.getElementById("icono-musica");
-
-// let tocando = true;
-
-// botonMusica.addEventListener("click", () => {
-//   if (tocando) {
-//     musica.pause();
-//     iconoMusica.classList.replace("bi-pause-fill", "bi-play-fill");
-//   } else {
-//     musica.play();
-//     iconoMusica.classList.replace("bi-play-fill", "bi-pause-fill");
-//   }
-//   tocando = !tocando;
-// });
-
-// BOTÓN DE PLAY / PAUSA
-
+// BOTÓN DE PLAY / PAUSA + MODAL DE BIENVENIDA
 document.addEventListener("DOMContentLoaded", () => {
   const musica = document.getElementById("musica");
   const botonMusica = document.getElementById("boton-musica");
@@ -74,11 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let tocando = true;
 
-  // Arrancamos muteado para evitar bloqueo autoplay
   musica.muted = true;
   musica.play().catch(() => {});
 
-  // Al primer click quitamos mute y ponemos sonido
   document.addEventListener(
     "click",
     () => {
@@ -92,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { once: true }
   );
 
-  // Botón play/pause música
   botonMusica.addEventListener("click", () => {
     if (tocando) {
       musica.pause();
@@ -104,15 +81,23 @@ document.addEventListener("DOMContentLoaded", () => {
     tocando = !tocando;
   });
 
-  // Cerrar modal al click en "INGRESAR"
-
+  // MODAL DE BIENVENIDA
   const bienvenidaModal = document.getElementById("modalBienvenida");
   const btnIngresar = document.getElementById("btnIngresar");
 
-  btnIngresar.addEventListener("click", () => {
+  // Solo mostrar si no ingresó antes
+  if (!sessionStorage.getItem("ingresoHecho")) {
+    bienvenidaModal.style.display = "flex";
+  } else {
+    bienvenidaModal.style.display = "none";
+  }
+
+  btnIngresar.addEventListener("click", (e) => {
+    e.preventDefault();
     if (bienvenidaModal) {
       bienvenidaModal.style.display = "none";
     }
+    sessionStorage.setItem("ingresoHecho", "true");
     musica.play().catch(() => {});
   });
 });
